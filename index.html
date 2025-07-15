@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamebox TV &bull; Filmes, séries e canais ao vivo no seu app de entretenimento favorito!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            animation: pageFadeIn 2s ease-in forwards;
+        }
+
+        @keyframes pageFadeIn {
+            0% {
+                background-color: #000000;
+            }
+
+            70% {
+                background-color: #0a0a0a;
+            }
+
+            100% {
+                background-color: #0e0e0e;
+            }
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textFadeIn 1.5s ease 0.5s forwards;
+        }
+
+        p {
+            font-size: 1em;
+            color: #cccccc;
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textFadeIn 1.5s ease 1s forwards;
+        }
+
+        @keyframes textFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            background: linear-gradient(90deg,
+                    #ff0000, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00, #ff0000);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rgbEffect 6s linear infinite, pulse 1.5s ease-in-out infinite;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            margin: 30px auto;
+            position: relative;
+            opacity: 0;
+            animation: textFadeIn 1s ease 0.3s forwards;
+        }
+
+        .loader:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            background: linear-gradient(90deg,
+                    #ff0000, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00, #ff0000);
+            background-size: 400% 400%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: spin 1.5s linear infinite, rgbEffect 6s linear infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rgbEffect {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.9;
+                text-shadow: 0 0 5px currentColor;
+            }
+
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 15px currentColor;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <h1>VOCÊ SERÁ REDIRECIONANDO PARA O APLICATIVO</h1>
+    <p>Caso não for redirecionado,<a href="https://gameboxbrasil.com">clique aqui.</a></p>
+
+    <script>
+        setTimeout(function () {
+            window.location.href = "https://gameboxbrasil.com";
+        }, 5000);
+    </script>
+</body>
+
+</html>
